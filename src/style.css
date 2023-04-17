@@ -30,16 +30,17 @@ body {
 
 /* Dropdown Menu Exercise */
 
-.exercise-1 {
+.exercise-body {
   width: 100%;
   padding: 30px;
   display: flex;
+  flex-direction: column;
   border-style: solid;
   border-color: black;
   border-width: 1px;
 }
 
-.header {
+.sidebar {
   width: 10%;
   height: 100%;
   padding: 15px;
@@ -84,5 +85,52 @@ body {
 }
 
 /* Mobile Menu Exercise */
+
+.header {
+  width: 100%;
+  background-color: lightgrey;
+  display: flex;
+  gap: 2rem;
+}
+
+.tab-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  min-height: 100%;
+}
+
+.tab-item {
+  cursor: pointer;
+  min-height: 100%;
+  padding: 15px;
+}
+
+.tab-item.active {
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
+  border-bottom-color: black;
+  font-weight: 800;
+}
+
+.tab-body {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tab-name {
+  color: red;
+}
+
+.tab-headline {
+  font-style: italic;
+}
+
+.tab-img {
+  max-width: 20%;
+}
 
 /* Image Carousel Exercise */
