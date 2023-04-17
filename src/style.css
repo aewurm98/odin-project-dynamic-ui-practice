@@ -1,0 +1,88 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Exercise Labels */
+
+.exercise-title {
+  width: 100%;
+  font-size: 3rem;
+  text-align: center;
+  background-color: blue;
+  color: white;
+}
+
+/* Dropdown Menu Exercise */
+
+.exercise-1 {
+  width: 100%;
+  padding: 30px;
+  display: flex;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+}
+
+.header {
+  width: 10%;
+  height: 100%;
+  padding: 15px;
+  background-color: lightgrey;
+  display: flex;
+  gap: 2rem;
+}
+
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: start;
+}
+
+.menu-icon {
+  max-height: 10vh;
+  max-width: 30%;
+  cursor: pointer;
+}
+
+.menu {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  visibility: hidden;
+}
+
+.menu.active {
+  visibility: visible;
+}
+
+.menu-item {
+  list-style: none;
+  padding: 5px;
+  background-color: black;
+  border-radius: 5px;
+  color: white;
+}
+
+/* Mobile Menu Exercise */
+
+/* Image Carousel Exercise */
