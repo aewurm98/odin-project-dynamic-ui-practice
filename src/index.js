@@ -16,7 +16,12 @@ import Photo5 from './assets/nature-photo-5.jpg';
 // Import other Modules
 import createMenu from './dropdown.js';
 import { tabContents, allTabs } from './mobile-menu.js';
-import { imageSlider, nextPhoto, prevPhoto } from './image-slider.js';
+import {
+  imageSlider,
+  nextPhoto,
+  prevPhoto,
+  autoAdvance,
+} from './image-slider.js';
 
 // Gather useful global references
 const body = document.querySelector('body');
@@ -134,3 +139,5 @@ body.appendChild(title3);
 body.appendChild(exercise3);
 
 imageSlider.initialize([Photo1, Photo2, Photo3, Photo4, Photo5]);
+
+autoAdvance();

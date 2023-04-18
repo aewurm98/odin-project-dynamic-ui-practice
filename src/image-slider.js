@@ -99,6 +99,11 @@ export function nextPhoto(e) {
     const newNav =
       document.getElementsByClassName('slide-nav-item')[imageSlider.position];
     newNav.classList.add('active');
+
+    stopInterval();
+    advanceInterval = setInterval(autoAdvance, 3000);
+  } else {
+    return;
   }
 }
 
@@ -121,6 +126,11 @@ export function prevPhoto(e) {
     const newNav =
       document.getElementsByClassName('slide-nav-item')[imageSlider.position];
     newNav.classList.add('active');
+
+    stopInterval();
+    advanceInterval = setInterval(autoAdvance, 3000);
+  } else {
+    return;
   }
 }
 
@@ -147,5 +157,17 @@ export function jumpToPhoto(e) {
     const newNav =
       document.getElementsByClassName('slide-nav-item')[imageSlider.position];
     newNav.classList.add('active');
+  } else {
+    return;
   }
+}
+
+let advanceInterval = setInterval(autoAdvance, 3000);
+
+function stopInterval() {
+  clearInterval(advanceInterval);
+}
+
+export function autoAdvance() {
+  setTimeout(nextPhoto, 4000);
 }
