@@ -5,15 +5,18 @@ import './style.css';
 import Pizza from './assets/pizza-outline.svg';
 import Drinks from './assets/beer-outline.svg';
 import Burger from './assets/fast-food-outline.svg';
+import Arrow from './assets/noun-arrow-2.svg';
+import BackArrow from './assets/noun-arrow-back-2.svg';
+import Photo1 from './assets/nature-photo-1.jpg';
+import Photo2 from './assets/nature-photo-2.jpg';
+import Photo3 from './assets/nature-photo-3.jpg';
+import Photo4 from './assets/nature-photo-4.jpg';
+import Photo5 from './assets/nature-photo-5.jpg';
 
 // Import other Modules
-import createMenu, { toggleMenu } from './dropdown.js';
-import tabList, {
-  tabContents,
-  createTabSection,
-  toggleTab,
-  allTabs,
-} from './mobile-menu.js';
+import createMenu from './dropdown.js';
+import { tabContents, allTabs } from './mobile-menu.js';
+import { imageSlider, nextPhoto, prevPhoto } from './image-slider.js';
 
 // Gather useful global references
 const body = document.querySelector('body');
@@ -95,5 +98,39 @@ title3.classList.add('exercise-title');
 const exercise3 = document.createElement('div');
 exercise3.classList.add('exercise-body');
 
+const imgContainer = document.createElement('div');
+imgContainer.classList.add('container');
+
+const leftArrow = document.createElement('img');
+leftArrow.classList.add('arrow');
+leftArrow.src = BackArrow;
+leftArrow.addEventListener('click', prevPhoto);
+
+const carousel = document.createElement('div');
+carousel.classList.add('carousel');
+
+const slides = document.createElement('div');
+slides.classList.add('slides');
+
+const dots = document.createElement('div');
+dots.classList.add('slide-nav');
+
+carousel.appendChild(slides);
+carousel.appendChild(dots);
+
+const rightArrow = document.createElement('img');
+rightArrow.classList.add('arrow');
+rightArrow.src = Arrow;
+rightArrow.addEventListener('click', nextPhoto);
+
+imgContainer.appendChild(leftArrow);
+imgContainer.appendChild(carousel);
+imgContainer.appendChild(rightArrow);
+
+exercise3.appendChild(imgContainer);
+
+// Add DOM Elements
 body.appendChild(title3);
 body.appendChild(exercise3);
+
+imageSlider.initialize([Photo1, Photo2, Photo3, Photo4, Photo5]);
